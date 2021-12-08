@@ -13,7 +13,7 @@ city: string;
 
   constructor(private oruServisas: WeatherService) {
     
-      this.oruServisas.miestas = this.city;
+      
   }
 
   
@@ -21,7 +21,11 @@ saveForm() {
   let location = {
     city: this.city
   }
-  // console.log(this.city);
+  console.log(this.city);
   
+}
+grazintiMiesta() {
+  this.oruServisas.miestas = this.city;
+  return this.oruServisas.miestas;
 }
 }
