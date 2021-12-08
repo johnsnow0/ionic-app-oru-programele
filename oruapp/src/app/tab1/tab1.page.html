@@ -7,6 +7,9 @@
 </ion-header>
 
 <ion-content class="home" >
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
   <ion-grid *ngIf="data" style="background-color: #9ab7ec;">
     <ion-row >
       <ion-col>
@@ -35,7 +38,6 @@
 
     </ion-grid>
 
-    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
-      <ion-refresher-content></ion-refresher-content>
-    </ion-refresher>
+    
+    
 </ion-content>

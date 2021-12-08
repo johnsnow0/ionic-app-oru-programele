@@ -13,7 +13,9 @@ export class WeatherService {
 
   
 miestas;
-url;
+url = 'https://api.openweathermap.org/data/2.5/weather?q='
+kitasUrl = '&units=metric&appid=35ac972ed30a9ed3e6ad8d09a895abf1'
+uzklausa = '${url}${miestas}$kitasUrl'
   
 constructor(private http: HttpClient) {
   this.url = 'https://api.openweathermap.org/data/2.5/weather?q='+this.miestas+'&units=metric&appid=35ac972ed30a9ed3e6ad8d09a895abf1'
