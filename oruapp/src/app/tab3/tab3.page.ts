@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { WeatherService } from '../provider/weather.service';
 
 @Component({
   selector: 'app-tab3',
@@ -10,13 +10,18 @@ export class Tab3Page {
 
 city: string;
 
-  constructor() {
+
+  constructor(private oruServisas: WeatherService) {
     
-      
+      this.oruServisas.miestas = this.city;
   }
+
+  
 saveForm() {
   let location = {
     city: this.city
   }
+  // console.log(this.city);
+  
 }
 }

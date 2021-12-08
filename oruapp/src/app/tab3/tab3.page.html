@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
+    <ion-title style="background-color: #1956c9; color: white">
       Nustatymai
     </ion-title>
   </ion-toolbar>
@@ -11,6 +11,7 @@
     <ion-row>
       <ion-col width-100>
         <ion-list>
+          <p>Įveskite miesto pavadinimą</p>
           <form (ngSubmit)="saveForm()">
             <ion-item>
               <ion-label fixed>
@@ -19,7 +20,7 @@
               </ion-label>
               <ion-input [(ngModel)]="city" name="miestas" type="text"></ion-input>
             </ion-item>
-            <button ion-button type="submit" block>Issaugoti</button>
+            <button ion-button type="submit" block class="mygtukas">Išsaugoti</button>
 
           </form>
         </ion-list>

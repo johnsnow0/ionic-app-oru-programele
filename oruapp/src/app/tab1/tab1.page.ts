@@ -30,7 +30,14 @@ export class Tab1Page {
 ngOnInit() {
   this.oruPrognoze.getData().subscribe(data => {console.log(data); this.data = data});
 }
+doRefresh(event) {
+  console.log('Begin async operation');
 
+  setTimeout(() => {
+    console.log('Async operation has ended');
+    event.target.complete();
+  }, 2000);
+}
 }
 
 

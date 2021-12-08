@@ -11,16 +11,18 @@ const API_URL = environment.apiURL;
 export class WeatherService {
 
   
-// miestas;
-// url; 
+miestas;
+url; 
   
-constructor(private http: HttpClient) { }
+constructor(private http: HttpClient) {
+  this.url = 'https://api.openweathermap.org/data/2.5/weather?q='+{any:this.miestas}+'&units=metric&appid=35ac972ed30a9ed3e6ad8d09a895abf1'
+ }
 
 
   getData() {
-
-return this.http.get('https://api.openweathermap.org/data/2.5/weather?q=vilnius&units=metric&appid=35ac972ed30a9ed3e6ad8d09a895abf1')
-
+console.log(this.miestas);
+return this.http.get('https://api.openweathermap.org/data/2.5/weather?q=vilnius&units=metric&appid=35ac972ed30a9ed3e6ad8d09a895abf1');
+ 
 }
 
   
