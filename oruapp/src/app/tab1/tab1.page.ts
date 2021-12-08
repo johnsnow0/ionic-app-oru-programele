@@ -32,7 +32,7 @@ ngOnInit() {
 }
 doRefresh(event) {
   console.log('Begin async operation');
-  this.oruPrognoze.getData().subscribe(data => {console.log(data); this.data = data});
+  this.ngOnInit();
 
   setTimeout(() => {
     console.log('Async operation has ended');
