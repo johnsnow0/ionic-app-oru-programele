@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { i18nMetaToJSDoc } from '@angular/compiler/src/render3/view/i18n/meta';
+import { ThrowStmt } from '@angular/compiler';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
@@ -13,22 +13,23 @@ export class WeatherService {
 
   
 miestas;
-url = 'https://api.openweathermap.org/data/2.5/weather?q='
-kitasUrl = '&units=metric&appid=35ac972ed30a9ed3e6ad8d09a895abf1'
-uzklausa = '${url}${miestas}$kitasUrl'
+url;
+
   
 constructor(private http: HttpClient) {
-  this.url = 'https://api.openweathermap.org/data/2.5/weather?q='+this.miestas+'&units=metric&appid=35ac972ed30a9ed3e6ad8d09a895abf1'
+  this.url = 'https://api.openweathermap.org/data/2.5/weather?q=vilnius&units=metric&appid=35ac972ed30a9ed3e6ad8d09a895abf1'
  }
 
 
   getData() {
 console.log(this.miestas);
-// return this.http.get(this.url);
-return this.http.get('https://api.openweathermap.org/data/2.5/weather?q=vilnius&units=metric&appid=35ac972ed30a9ed3e6ad8d09a895abf1');
- 
+
+return this.http.get(this.url);
+// sitame servise ir jam subsribint tab1 puslapi.  event emitter panaudoti.
 }
 
-  
+nustatytiMiesta(city: any) {
+  this.url = 'https://api.openweathermap.org/data/2.5/weather?q='+city+'&units=metric&appid=35ac972ed30a9ed3e6ad8d09a895abf1';
+}  
 
 }

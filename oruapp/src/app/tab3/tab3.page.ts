@@ -18,14 +18,11 @@ city: string;
 
   
 saveForm() {
-  let location = {
-    city: this.city
-  }
-  console.log(this.city);
+  this.oruServisas.nustatytiMiesta(this.city);
+  console.log(this.oruServisas.miestas);
+  
+  return this.oruServisas.miestas;
   
 }
-grazintiMiesta() {
-  this.oruServisas.miestas = this.city;
-  return this.oruServisas.miestas;
-}
+
 }
